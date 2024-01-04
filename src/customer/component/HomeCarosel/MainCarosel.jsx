@@ -1,27 +1,28 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { mainCarouselData } from "../../pages/HomePage/MainCaroselData";
 
-const items = [
-  <div className="item" data-value="1">
-    1
-  </div>,
-  <div className="item" data-value="2">
-    2
-  </div>,
-  <div className="item" data-value="3">
-    3
-  </div>,
-  <div className="item" data-value="4">
-    4
-  </div>,
-  <div className="item" data-value="5">
-    5
-  </div>,
-];
+const MainCrosel = () => {
+  const items = mainCarouselData.map((item) => (
+    <img
+      className
+      role="presentation"
+      onClick={() => navigate}
+      src={item.image}
+      alt=""
+    />
+  ));
 
-const MainCrosel = () => (
-  <AliceCarousel mouseTracking items={items} controlsStrategy="alternate" />
-);
+  return (
+    <AliceCarousel
+      items={items}
+      autoPlay
+      disableButtonControls
+      autoPlayInterval={1000}
+      infinite
+    />
+  );
+};
 
 export default MainCrosel;
