@@ -5,20 +5,14 @@ import { mainCarouselData } from "../../pages/HomePage/MainCaroselData";
 
 const MainCrosel = () => {
   const items = mainCarouselData.map((item) => (
-    <img
-      className
-      role="presentation"
-      onClick={() => navigate}
-      src={item.image}
-      alt=""
-    />
+    <img className="" role="presentation" src={item.image} alt="" />
   ));
 
   return (
     <AliceCarousel
+      disableButtonsControls
       items={items}
       autoPlay
-      disableButtonControls
       autoPlayInterval={1000}
       infinite
     />
