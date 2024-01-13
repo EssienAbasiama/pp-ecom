@@ -5,7 +5,12 @@ import { mainCarouselData } from "../../pages/HomePage/MainCaroselData";
 
 const MainCrosel = () => {
   const items = mainCarouselData.map((item) => (
-    <img className="" role="presentation" src={item.image} alt="" />
+    <img
+      className="cursor-pointer -z-10"
+      role="presentation"
+      src={item.image}
+      alt=""
+    />
   ));
 
   return (
